@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>BIT Dashboard</h2>
+        <a href="index.html">Main Page</a>
+        <a href="filter-panel.html" class="active">Filter Panel</a>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>Filter Panel</h1>
+        </div>
+
+        <div class="filter-container">
+            <label for="batch">Batch</label>
+            <select id="batch">
+                <option>All Batches</option>
+                <option>2022-2026</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <label for="department">Department</label>
+            <select id="department">
+                <option>All Departments</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <label for="quota">Quota</label>
+            <select id="quota">
+                <option>Counselling</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <label for="companies">Number of companies attended</label>
+            <select id="companies">
+                <option>Three</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <label for="marks">10th Mark percentage</label>
+            <select id="marks">
+                <option>Above 80%</option>
+                <!-- Add more options as required -->
+            </select>
+
+            <button class="clear-button">Clear All</button>
+        </div>
+    </div>
+</body>
+</html>
