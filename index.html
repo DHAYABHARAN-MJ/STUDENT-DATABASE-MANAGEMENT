@@ -3,64 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIT Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="sidebar">
-        <h2>BIT DASHBOARD</h2>
-        <ul>
-            <li><a href="#" class="active">Main Page</a></li>
-            <li><a href="#">Filter Panel</a></li>
-        </ul>
-        <div class="search-box-wrapper">
-            <input type="text" placeholder="Search..." class="search-box">
-        </div>
+        <h2>BIT Dashboard</h2>
+        <a href="index.html" class="active">Main Page</a>
+        <a href="filter-panel.html">Filter Panel</a>
     </div>
-
+    
     <div class="content">
-        <div class="top-bar">
-            <span class="path">Dashboard > Filter Panel</span>
-        </div>
-
-        <div class="filter-panel">
-            <button class="filter-btn">Filters</button>
-            <div class="filters" id="filtersDropdown">
-                <div class="filter-option">
-                    <label for="batch">Batch:</label>
-                    <select id="batch">
-                        <option>All Batches</option>
-                    </select>
-                </div>
-                <div class="filter-option">
-                    <label for="department">Department:</label>
-                    <select id="department">
-                        <option>All Departments</option>
-                    </select>
-                </div>
-                <div class="filter-option">
-                    <label for="quota">Quota:</label>
-                    <select id="quota">
-                        <option>Counselling</option>
-                    </select>
-                </div>
-                <div class="filter-option">
-                    <label for="companies">Number of companies attended:</label>
-                    <select id="companies">
-                        <option>Three</option>
-                    </select>
-                </div>
-                <div class="filter-option">
-                    <label for="marks">10th Mark percentage:</label>
-                    <select id="marks">
-                        <option>Above 80%</option>
-                    </select>
-                </div>
-                <button id="clearFilters">Clear All</button>
+        <div class="header">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search for Student Profile">
             </div>
         </div>
     </div>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
