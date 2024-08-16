@@ -8,6 +8,49 @@ body {
     box-sizing: border-box;
 }
 
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.google-signin-container {
+    text-align: center;
+}
+
+.google-signin-btn {
+    background-color: #ffffff;
+    color: #444444;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.google-signin-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.signin-instruction {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777777;
+    text-align: center;
+}
+
+/* Sidebar and other existing styles remain the same */
 .sidebar {
     width: 250px;
     background-color: #333333;
@@ -78,40 +121,10 @@ body {
     font-size: 24px;
     color: #000000;
 }
-
-/* Filter Panel styles */
-.filter-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.filter-container label {
+.dashboard-title {
+    font-size: 24px;
     font-weight: bold;
     color: #000000;
-}
-
-.filter-container select,
-.filter-container input[type="text"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #888888;
-    background-color: #e0e0e0;
-    color: #000000;
-    width: 100%;
-}
-
-.clear-button {
-    background-color: #888888;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.clear-button:hover {
-    background-color: #aaaaaa;
+    margin-bottom: 20px;
+    text-align: left;
 }
