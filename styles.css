@@ -1,4 +1,3 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -50,7 +49,6 @@ body {
     text-align: center;
 }
 
-/* Sidebar and other existing styles remain the same */
 .sidebar {
     width: 250px;
     background-color: #333333;
@@ -93,12 +91,12 @@ body {
 }
 
 .header {
-    text-align: center; /* Center the search box horizontally */
+    text-align: center; 
     margin-bottom: 20px;
 }
 
 .search-container {
-    display: inline-block; /* Ensure container fits the search box */
+    display: inline-block; 
     position: relative;
 }
 

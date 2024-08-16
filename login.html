@@ -11,8 +11,6 @@
     <div class="login-container">
         <div class="google-signin-container">
             <h2 class="dashboard-title">BIT Dashboard</h2>
-
-            <!-- Google Sign-In Button -->
             <div class="g-signin2" data-onsuccess="onSignIn" id="googleSignInBtn"></div>
             <p class="signin-instruction">Sign in with your organization mail id to access the dashboard</p>
         </div>
@@ -25,8 +23,6 @@
             console.log('ID: ' + profile.getId());
             console.log('Name: ' + profile.getName());
             console.log('Email: ' + profile.getEmail());
-
-            // Redirect to dashboard after successful login
             window.location.href = 'index.html';
         }
 
