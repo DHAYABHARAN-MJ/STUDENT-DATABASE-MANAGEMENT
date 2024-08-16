@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="google-signin-client_id" content="158651131098-2607903rinkb0ubd39nslv4264of44rl.apps.googleusercontent.com">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>BIT Dashboard</h2>
-        <a href="index.html" class="active">Main Page</a>
-        <a href="filter-panel.html">Filter Panel</a>
-    </div>
-    
-    <div class="content">
-        <div class="header">
-            <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search for Student Profile">
-            </div>
+    <div class="login-container">
+        <div class="google-signin-container">
+            <h2 class="dashboard-title">BIT Dashboard</h2>
+            <div class="g-signin2" data-onsuccess="onSignIn" id="googleSignInBtn"></div>
+            <p class="signin-instruction">Sign in with your organization mail id to access the dashboard</p>
         </div>
-
-        
     </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail());
+            window.location.href = 'dashboard.html';
+        }
+
+        function renderButton() {
+    gapi.signin2.render('googleSignInBtn', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSignIn,
+        'onfailure': onFailure
+    });
+}
+
+        function startApp() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init().then(function(){
+                    renderButton();
+                });
+            });
+        }
+
+        startApp();
+    </script>
 </body>
 </html>
