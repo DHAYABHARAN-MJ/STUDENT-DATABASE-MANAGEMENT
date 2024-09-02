@@ -10,10 +10,14 @@ body {
 {
     margin-top: 180px;
     font-size: 50px;
+    font-weight: lighter;
+    font-stretch: extra-expanded;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     /* background-color: #333333; */
 }
 .login-container {
-    background-color:rgba(155, 155, 155, 0.508);
+    background-color:rgba(255, 255, 255, 0.508);
     backdrop-filter: blur(5px);
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,9 +49,30 @@ body {
     gap: 10px;
     transition: background-color 0.3s;
 }
-
+.gb{
+    display: flex;
+    flex-direction:row;
+    background-color: #c0c0c0;
+    height: 4vh;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin:auto;
+}
+.sigin
+{
+    font-size: large;
+    font-weight: 800;
+    padding-right: 10%;
+    color: #000000;
+}
+.gb:hover{
+    background-color: #dddddd;
+}
 .google-signin-btn:hover {
-    background-color: #f0f0f0;
+    background-color: #ff0000;
 }
 
 .google-icon {
