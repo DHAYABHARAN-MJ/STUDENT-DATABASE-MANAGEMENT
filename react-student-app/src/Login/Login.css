@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ecf1fa;
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,14 +17,14 @@ body {
     /* background-color: #333333; */
 }
 .login-container {
-    background-color:rgba(255, 255, 255, 0.508);
+    background-color:rgb(255, 255, 255);
     backdrop-filter: blur(5px);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
     width: 500px;
     height: 410px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction:column;
     margin:auto;
@@ -35,6 +35,8 @@ body {
 .google-signin-container {
     text-align: center;
 }
+
+
 /* .g-signin2
 {
     color: #333333;
@@ -55,24 +57,25 @@ body {
 .gb{
     display: flex;
     flex-direction:row;
-    background-color: #c0c0c0;
+    color: rgb(162, 177, 27);
+    background-color:#0ea4e9e0;
     height: 4vh;
     align-items: center;
     justify-content: space-around;
-    width: 120px;
+    width: 350px;
     border-radius: 8px;
     cursor: pointer;
     margin:auto;
 }
-.sigin
+.signin
 {
     font-size: large;
-    font-weight: 800;
-    padding-right: 10%;
-    color: #000000;
+    font-weight: 500;
+    padding-right: 0%;
+    color: #ffffff;
 }
 .gb:hover{
-    background-color: #dddddd;
+    background-color: #0ea4e9b0;
 }
 .google-signin-btn:hover {
     background-color: #ff0000;
