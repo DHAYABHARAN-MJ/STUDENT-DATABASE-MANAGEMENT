@@ -58,7 +58,7 @@ body {
     display: flex;
     flex-direction:row;
     color: rgb(162, 177, 27);
-    background-color:#0ea4e9e0;
+    background-color:#0ea4e9;
     height: 4vh;
     align-items: center;
     justify-content: space-around;
@@ -75,7 +75,7 @@ body {
     color: #ffffff;
 }
 .gb:hover{
-    background-color: #0ea4e9b0;
+    background-color: #0ea4e98e;
 }
 .google-signin-btn:hover {
     background-color: #ff0000;
