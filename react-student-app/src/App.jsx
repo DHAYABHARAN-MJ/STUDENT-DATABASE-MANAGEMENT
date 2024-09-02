@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '../src/Login/Logina'; // Adjust the path as necessary
+import Login from '../src/Login/Login'; // Adjust the path as necessary
 
 const App = () => {
   return (
