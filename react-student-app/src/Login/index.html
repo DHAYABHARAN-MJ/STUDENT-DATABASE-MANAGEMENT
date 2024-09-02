@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Sign-In meta tag with client ID -->
+    <meta name="google-signin-client_id" content="158651131098-2607903rinkb0ubd39nslv4264of44rl.apps.googleusercontent.com">
+</head>
+<body>
+    <div class="wb">
+        <center><span id="w">Welcome Back!</span></center>
+    </div>
+    <div class="login-container">
+        <div class="google-signin-container">
+            <div class="bitsathyimg">
+                <img src="images/Bannari_Amman_Institute_of_Technology_logo.png" alt="">
+            </div>
+            <p class="signin-instruction">Sign in with your <span><b>Bitsathy Gmail</b></span></p>
+            <div class="gb" onclick="handleSignInClick()">
+                <img src="images/google.png" height="25px" width="25px" alt=""><div class="sigin">Sign in</div>
+                <!-- <center><div class="g-signin2" id="googleSignInBtn"></div></center> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Google Platform library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function handleSignInClick()
+        {
+            const auth2=gapi.auth2.getAuthInstance();
+            auth2.signIn().then(onSignIn).catch(onFailure)
+        }
+        function onSignIn(googleUser) {
+            // Get user profile information
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail());
+
+            // Redirect to dashboard page
+            window.location.href = '/dashboard.html';
+        }
+
+        function onFailure(error) {
+            console.error('Google Sign-In failed:', error);
+            alert('Sign-In failed. Please try again.');
+        }
+
+        function renderButton() {
+            gapi.signin2.render('googleSignInBtn', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSignIn,
+                'onfailure': onFailure
+            });
+        }
+
+        function startApp() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init().then(function(){
+                    renderButton();
+                });
+            });
+        }
+
+        // Start the app
+        startApp();
+    </script>
+</body>
+</html>

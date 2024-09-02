@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wb
+{
+    margin-top: 180px;
+    font-size: 50px;
+    font-weight: lighter;
+    font-stretch: extra-expanded;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* background-color: #333333; */
+}
+.login-container {
+    background-color:rgba(255, 255, 255, 0.508);
+    backdrop-filter: blur(5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    width: 500px;
+    height: 410px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction:column;
+    margin:auto;
+    margin-top: 40px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+.google-signin-container {
+    text-align: center;
+}
+/* .g-signin2
+{
+    color: #333333;
+} */
+.google-signin-btn {
+    background-color: #ff0000;
+    color: #444444;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+.gb{
+    display: flex;
+    flex-direction:row;
+    background-color: #c0c0c0;
+    height: 4vh;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin:auto;
+}
+.sigin
+{
+    font-size: large;
+    font-weight: 800;
+    padding-right: 10%;
+    color: #000000;
+}
+.gb:hover{
+    background-color: #dddddd;
+}
+.google-signin-btn:hover {
+    background-color: #ff0000;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.signin-instruction {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777777;
+    text-align: center;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333333;
+    padding: 20px;
+    color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #555555;
+    border-radius: 5px;
+    padding-left: 15px;
+    transition: all 0.3s;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 40px;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: inline-block; 
+    position: relative;
+}
+
+.search-box {
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #000000;
+    background-color: #e0e0e0;
+    color: #000000;
+    font-size: 18px;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #000000;
+}
+.dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: left;
+}
