@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     color: #000000;
     margin: 0;
     padding: 0;
@@ -8,11 +8,20 @@ body {
 }
 
 .login-container {
+    background-color:rgba(250, 246, 246, 0.508);
+    backdrop-filter: blur(5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    width: 500px;
+    height: 410px;
+    color: rgb(0, 0, 0);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ffffff;
+    flex-direction:column;
+    margin:auto;
+    margin-top: 180px;
+    padding-bottom: 50px;
+
 }
 
 .google-signin-container {
