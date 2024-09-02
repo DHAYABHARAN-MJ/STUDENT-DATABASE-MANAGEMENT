@@ -6,9 +6,14 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
+.wb
+{
+    margin-top: 180px;
+    font-size: 50px;
+    /* background-color: #333333; */
+}
 .login-container {
-    background-color:rgba(250, 246, 246, 0.508);
+    background-color:rgba(155, 155, 155, 0.508);
     backdrop-filter: blur(5px);
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,17 +24,16 @@ body {
     display: flex;
     flex-direction:column;
     margin:auto;
-    margin-top: 180px;
-    padding-bottom: 50px;
-
+    margin-top: 40px;
+    padding-top: 12px;
+    padding-bottom: 10px;
 }
-
 .google-signin-container {
     text-align: center;
 }
 
 .google-signin-btn {
-    background-color: #ffffff;
+    background-color: #ff0000;
     color: #444444;
     border: 1px solid #dddddd;
     border-radius: 5px;
