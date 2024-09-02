@@ -2,7 +2,7 @@ import React from "react";
 import googleimg from '../assets/images/google.png'
 import bitsathyimg from '../assets/images/Bannari_Amman_Institute_of_Technology_logo.png'
 import '../Login/Login.css'
-
+const Login=()=>{
 return(
     <div className="container">
         <div class="wb">
@@ -23,4 +23,5 @@ return(
         </div>
     </div>
 )
+}
 export default Login
