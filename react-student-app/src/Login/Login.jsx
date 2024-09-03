@@ -43,10 +43,10 @@ const Login = () => {
         const userInfo=parseJwt(credential);
         if(userInfo && userInfo.email.endswith(`@${auth_domain}`))
           {
-            history('/Dashboard');
+          onsign();
           }
           else{
-            alert("Bitsathy Mail Id");
+            alert("Only Bitsathy Mail Id Is Allowed");
           }
       },
       onError: (error) => {
