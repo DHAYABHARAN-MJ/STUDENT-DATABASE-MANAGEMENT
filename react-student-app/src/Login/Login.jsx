@@ -48,7 +48,6 @@ const Login = () => {
           else{
             alert("Only Bitsathy Mail Id Is Allowed");
           onsign();
-            
           }
       },
       onError: (error) => {
@@ -71,10 +70,10 @@ const Login = () => {
             <div className="bitsathyimg">
               <img src={bitsathyimg} alt="Bitsathy Logo" />
             </div>
-            <p className="text-3xl font-bold underline">
+            <p className='siginbit'>
               Sign in with your <span><b>Bitsathy Gmail</b></span>
             </p>
-            <div className="gb" onClick={login}>
+            <div className="gb" onClick={onsign}>
               {/* <img src={googleimg} width={25} height={25} alt="Google Logo"/> */}
               <div className="signin">Google Sign In</div>
             </div>
