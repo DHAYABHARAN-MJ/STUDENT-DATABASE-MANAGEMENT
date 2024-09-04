@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import bitsathyimg from '../assets/images/Bannari_Amman_Institute_of_Technology_logo.png';
 import '../Login/Login.css';
 const CLIENT_ID = '238970835426-f88bu0tpphgd6cc8rkfrq70sdea6qcb7.apps.googleusercontent.com';
-const auth_domain='bitsathy.ac.in'
+const auth_domain='@bitsathy.ac.in'
 const Login = () => {
   const parseJwt = (token) => {
     if (!token) return null;
@@ -41,14 +41,16 @@ const Login = () => {
       onSuccess: (credentialResponse) => {
         const {credential}=credentialResponse;
         const userInfo=parseJwt(credential);
-        if(userInfo && userInfo.email.endswith(`@${auth_domain}`))
-          {
-          onsign();
-          }
-          else{
-            alert("Only Bitsathy Mail Id Is Allowed");
-          onsign();
-          }
+        // onsign();
+        console.log(userInfo.email);
+        // if(userInfo && userInfo.email.endswith(`@${auth_domain}`))
+        //   {
+        //     console.log(userInfo.email);
+        //   onsign();
+        //   }
+        //   else{
+        //     alert("Only Bitsathy Mail Id Is Allowed");
+        //   }
       },
       onError: (error) => {
         console.error('Google Sign-In failed:', error);
@@ -70,7 +72,7 @@ const Login = () => {
             <div className="bitsathyimg">
               <img src={bitsathyimg} alt="Bitsathy Logo" />
             </div>
-            <p className='siginbit'>
+            <p className='siginbit' >
               Sign in with your <span><b>Bitsathy Gmail</b></span>
             </p>
             <div className="gb" onClick={onsign}>
