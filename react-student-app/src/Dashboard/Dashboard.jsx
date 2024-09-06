@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import '../Dashboard/Dashboard.css';
 import searchIcon from '../assets/images/search.png';
 
@@ -8,6 +9,13 @@ const Dashboard = () => {
     const toggle = () => {
         setIsOpen(!isOpen);
     };
+    const [data,setData]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:8081/sbdtable')
+        .then(res=>res.json())
+        .then(data=>setData(data))
+        .catch(err=>console.log(err))
+    },[])
 
     return (
         <div className="container-dashboard flex">
@@ -41,6 +49,17 @@ const Dashboard = () => {
                     </div>
     
                 </div>
+                <div className="studentDB space-y-3 bg-transparent w-full h-96 text-black flex-1 p-4 top-0 left-0 right-0">
+                    <table className="table-fixed flex-col p-5">
+                        <tr>
+                            <th className="RollNo p-2">Roll No</th>
+                            <th className="Name">Name</th>
+                            <th className="Bmail">Bmail</th>
+                            <th className="PS Level">PS level</th>
+                        </tr>
+                    </table>
+
+             </div>
             </div>
         </div>
     );
