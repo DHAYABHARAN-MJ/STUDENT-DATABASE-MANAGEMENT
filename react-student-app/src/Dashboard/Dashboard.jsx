@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import '../Dashboard/Dashboard.css';
 import searchIcon from '../assets/images/search.png';
+import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(true);
-    
+    const history=useNavigate()
+    const onstudent=()=>{
+        history('/StudentAdd')
+    }
     const toggle = () => {
         setIsOpen(!isOpen);
     };
@@ -27,10 +31,10 @@ const Dashboard = () => {
                         <a href="#home" className="home hover:bg-blue-200 p-2 rounded block shadow rounded">Home</a>
                     </li>
                     <li>
-                        <a href="#about" className="about hover:bg-blue-200 p-2 rounded block shadow rounded">Student</a>
+                        <a onClick={onstudent} className="about hover:bg-blue-200 p-2 rounded block shadow rounded">Student</a>
                     </li>
                     <li>
-                        <a href="#services" className="services hover:bg-blue-200 p-2 rounded block shadow rounded">Ps</a>
+                        <a className="services hover:bg-blue-200 p-2 rounded block shadow rounded">Ps</a>
                     </li>
                     <li>
                         <a href="#contact" className="contact hover:bg-blue-200 p-2 rounded block shadow rounded">Ptac</a>
@@ -49,14 +53,26 @@ const Dashboard = () => {
                     </div>
     
                 </div>
-                <div className="studentDB space-y-3 bg-transparent w-full h-96 text-black flex-1 p-4 top-0 left-0 right-0">
-                    <table className="table-fixed flex-col p-5">
-                        <tr>
-                            <th className="RollNo p-2">Roll No</th>
-                            <th className="Name">Name</th>
-                            <th className="Bmail">Bmail</th>
-                            <th className="PS Level">PS level</th>
-                        </tr>
+                <div className="studentDB space-y-3 bg-transparent w-full h-96 text-black flex-1 p-10 outline-none">
+                    <table className="table-auto w-full text-left border-collapse border shadow-lg rounded border-spacing-10 border-transparent">
+                        <thead className="w-full bg-blue-100">
+                            <tr>
+                                <th className="RollNo">Roll No</th>
+                                <th className="Name">Name</th>
+                                <th className="Bmail">Bmail</th>
+                                <th className="PS Level">PS level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((d,i)=>(
+                                <tr key={i}>
+                                    <td>{d.rollno}</td>
+                                    <td>{d.name}</td>
+                                    <td>{d.bmail}</td>
+                                    <td>{d.pslevel}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
 
              </div>

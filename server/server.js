@@ -31,6 +31,17 @@ app.get('/sbdtable',(req,res)=>{
         
     });
 });
+app.post('/adds',(req,res)=>{
+    const{rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr}=req.body;
+    const Query="INSERT INTO sbdtable () VALUES(?,?,?,?,?,?,?,?,?)";
+    const values=[rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr];
+    db.query(Query,values,(err,result)=>{
+        if(err)
+            res.json({error:"DB error"});
+        else
+        res.json({message:"Sucessfully Added",data:result});
+    })
+})
 app.listen(8081,()=>{
     console.log("ABD");
 });
