@@ -6,7 +6,7 @@ app.use(cors())
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
-    passwoed:'2624',
+    password:'2624',
     database:'sdb'
 });
 // db.connect((err)=>{
@@ -31,9 +31,9 @@ app.get('/sbdtable',(req,res)=>{
         
     });
 });
-app.post('/adds',(req,res)=>{
+app.post('/addStudent',(req,res)=>{
     const{rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr}=req.body;
-    const Query="INSERT INTO sbdtable () VALUES(?,?,?,?,?,?,?,?,?)";
+    const Query = "INSERT INTO sbdtable (rollno, name, bmail, pslevel, year, cgpa, lab, pr, fr) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     const values=[rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr];
     db.query(Query,values,(err,result)=>{
         if(err)
