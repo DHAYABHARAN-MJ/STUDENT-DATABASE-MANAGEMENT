@@ -6,7 +6,6 @@ app.use(cors())
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'2624',
     database:'sdb'
 });
 // db.connect((err)=>{
