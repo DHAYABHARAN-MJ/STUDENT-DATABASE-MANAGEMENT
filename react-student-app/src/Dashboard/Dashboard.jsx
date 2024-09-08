@@ -5,7 +5,7 @@ import searchIcon from '../assets/images/search.png';
 import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const history=useNavigate()
     const onstudent=()=>{
         history('/StudentAdd')
@@ -53,23 +53,27 @@ const Dashboard = () => {
                     </div>
     
                 </div>
-                <div className="studentDB space-y-3 bg-transparent w-full h-96 text-black flex-1 p-10 outline-none">
-                    <table className="table-auto w-full text-left border-collapse border shadow-lg rounded border-spacing-10 border-transparent">
-                        <thead className="w-full bg-blue-100">
+                <div className="studentDB space-y-2 bg-transparent w-full  h-96 text-black p-10 outline-none">
+                    <table className="table-auto border-collapse w-full text-center border shadow-2xl rounded-2xl space-y-2">
+                        <thead className="w-full border rounded-sm bg-blue-100">
                             <tr>
-                                <th className="RollNo">Roll No</th>
-                                <th className="Name">Name</th>
-                                <th className="Bmail">Bmail</th>
-                                <th className="PS Level">PS level</th>
+                                <th className="RollNo border border-gray-950 px-4 py-2 ">Roll No</th>
+                                <th className="Name border border-gray-950 px-4 py-2">Name</th>
+                                <th className="Bmail border border-gray-950 px-4 py-2">Bmail</th>
+                                <th className="PS Level border border-gray-950 px-4 py-2">PS level</th>
+                                <th className="Year border border-gray-950 px-4 py-2">Year</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((d,i)=>(
                                 <tr key={i}>
-                                    <td>{d.rollno}</td>
-                                    <td>{d.name}</td>
-                                    <td>{d.bmail}</td>
-                                    <td>{d.pslevel}</td>
+                                    <td className="border border-gray-950 px-4 py-2">{d.rollno}</td>
+                                    <td className="border border-gray-950 px-4 py-2">{d.name}</td>
+                                    <td className="border border-gray-950 px-4 py-2">{d.bmail}</td>
+                                    <td className="border border-gray-950 px-4 py-2">{d.pslevel}</td>
+                                    <td className="border border-gray-950 px-4 py-2">{d.year}</td>
+
                                 </tr>
                             ))}
                         </tbody>

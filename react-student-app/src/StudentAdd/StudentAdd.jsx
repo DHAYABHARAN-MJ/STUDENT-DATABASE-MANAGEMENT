@@ -19,6 +19,7 @@ const StudentAdd=()=>{
             }
         );
         const data=await res.json();
+        console.log(data);
         if(res.ok){alert('Successfylly Added');
             setStudent({rollno: '', name: '', bmail: '', pslevel: '', year: '', cgpa: '', lab: '', pr: '', fr: ''});
         }
@@ -43,7 +44,7 @@ return(
         <input type="text" onChange={Valchange} value={student.lab} name="lab" placeholder ="  Lab" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
         <input type="text" onChange={Valchange} value={student.pr} name="pr" placeholder ="  Placement Rank" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
         <input type="text" onChange={Valchange} value={student.fr} name="fr" placeholder ="  FullStack Rank" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
-        <input type="text" onChange={Valchange} value={student.ps} name="ps" placeholder ="  PS" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
+        <input type="text" onChange={Valchange} value={student.pslevel} name="pslevel" placeholder ="  PS" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
         <center>
             <div className="sbtn text-black text-lg bg-white w-20 h-8 border border-collapse outline-none rounded-lg p-0 hover:bg-gray-100 cursor-pointer" onClick={addStudent}>
                 <center>Submit</center>

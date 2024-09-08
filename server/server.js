@@ -3,6 +3,7 @@ const mysql=require('mysql')
 const cors=require('cors')
 const app=express()
 app.use(cors())
+app.use(express.json())
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -36,7 +37,9 @@ app.post('/addStudent',(req,res)=>{
     const values=[rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr];
     db.query(Query,values,(err,result)=>{
         if(err)
-            res.json({error:"DB error"});
+        {res.json({error:"DB error"});
+    console.log(err);
+}
         else
         res.json({message:"Sucessfully Added",data:result});
     })
