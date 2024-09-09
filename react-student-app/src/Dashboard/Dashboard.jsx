@@ -8,7 +8,7 @@ import { Navigate,useNavigate } from "react-router-dom";
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isopen, setIsopen] = useState(false);
-
+    const [fd,setfd]=useState('');
     const history=useNavigate()
     const onstudent=()=>{
         history('/StudentAdd')
@@ -35,20 +35,32 @@ const Dashboard = () => {
             .catch(err=>console.log(err))
             toggleopen();
         }
-        const onps=()=>
-            {
+    const onps=()=>
+        {
                 fetch('http://localhost:8081/ps')
                 .then(res=>res.json())
                 .then(data=>setData(data))
                 .catch(err=>console.log(err))
                 toggleopen();
-            }
-        const onname=()=>
-            {
+        }
+    const onname=()=>
+        {
                 fetch('http://localhost:8081/name')
                 .then(res=>res.json()).then(data=>setData(data)).catch(err=>console.log(err))
                 toggleopen();
-            } 
+        }
+    const searchQuery=(e)=>
+        {
+            setfd(e.target.value);
+        }
+        const filterData=data.filter(item=>
+            item.name.toLowerCase().includes(fd.toLowerCase())||
+            item.rollno.includes(fd.toLowerCase())||
+            item.bmail.toLowerCase().includes(fd.toLowerCase())||
+            item.year.toString().includes(fd.toLowerCase())||
+            item.pslevel.toString().includes(fd.toLowerCase())
+        
+        ) 
         return (
         <div className="container-dashboard flex">
             <div
@@ -75,7 +87,7 @@ const Dashboard = () => {
                     ☰
                 </div>
                 <div className="search-bar h-5 flex items-center">
-                    <input type="search" className="sb w-full shadow rounded border-none focus:outline-none px-2 py-1" placeholder="  Search"/>
+                    <input type="search" value={fd} onChange={searchQuery} className="sb w-full shadow rounded border-none focus:outline-none px-2 py-1" placeholder="  Search"/>
                     <div className="search-icon mx-2 cursor-pointer hover:bg-blue-200 rounded-lg">
                     <img className="w-9 h-9 outline-none text-white" src={searchIcon} alt="" />
                     </div>
@@ -112,7 +124,7 @@ const Dashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((d,i)=>(
+                            {filterData.map((d,i)=>(
                                 <tr key={i}>
                                     <td className="border border-gray-950 px-4 py-2">{d.rollno}</td>
                                     <td className="border border-gray-950 px-4 py-2">{d.name}</td>
