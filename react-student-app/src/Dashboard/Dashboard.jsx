@@ -7,6 +7,8 @@ import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isopen, setIsopen] = useState(false);
+
     const history=useNavigate()
     const onstudent=()=>{
         history('/StudentAdd')
@@ -14,6 +16,10 @@ const Dashboard = () => {
     const toggle = () => {
         setIsOpen(!isOpen);
     };
+    const toggleopen=()=>
+        {
+            setIsopen(!isopen);
+        }
     const [data,setData]=useState([])
     useEffect(()=>{
         fetch('http://localhost:8081/sbdtable')
@@ -23,13 +29,27 @@ const Dashboard = () => {
     },[])
     const onyear=()=>
         {
-            fetch('http://localhost:8081/ps')
+            fetch('http://localhost:8081/year')
             .then(res=>res.json())
             .then(data=>setData(data))
             .catch(err=>console.log(err))
+            toggleopen();
         }
-
-    return (
+        const onps=()=>
+            {
+                fetch('http://localhost:8081/ps')
+                .then(res=>res.json())
+                .then(data=>setData(data))
+                .catch(err=>console.log(err))
+                toggleopen();
+            }
+        const onname=()=>
+            {
+                fetch('http://localhost:8081/name')
+                .then(res=>res.json()).then(data=>setData(data)).catch(err=>console.log(err))
+                toggleopen();
+            } 
+        return (
         <div className="container-dashboard flex">
             <div
                 className={`bg-blue-100 w-64 min-h-screen p-6 fixed top-0 left-0 transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
@@ -56,19 +76,28 @@ const Dashboard = () => {
                 </div>
                 <div className="search-bar h-5 flex items-center">
                     <input type="search" className="sb w-full shadow rounded border-none focus:outline-none px-2 py-1" placeholder="  Search"/>
-                    <div className="search-icon mx-2 cursor-pointer hover:bg-gray-300 rounded-lg">
-                    <img className="w-5 h-5 outline-none text-white" src={searchIcon} alt="" />
+                    <div className="search-icon mx-2 cursor-pointer hover:bg-blue-200 rounded-lg">
+                    <img className="w-9 h-9 outline-none text-white" src={searchIcon} alt="" />
                     </div>
                     <div className="filter-icon">
-                    <img className="cursor-pointer  hover:bg-gray-300 hover:rounded-lg w-5 h-5" onClick={onyear} src={filtericon}/>
-                    {false && <div className="sort bg-white w-8 p-2 mt-24 mx-2 flex-1">
-                        <ul>
-                            <li>10</li>
-                            <li>11</li>
-                            <li>12</li>
-                        </ul>
-                    </div>}
+                            <button onClick={toggleopen} class="text-black hover:bg-blue-100 focus:ring-2 focus:outline-none font-extrabold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                                <img className="w-9 h-9" src={filtericon} alt="" />
+                            </button>
+                    <div id="dropdown" class={` bg-white divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute mt-2 transition-all duration-300 ease-in-out ${isopen?'max-h-96 opacity-100':'max-h-0 opacity-0'}`}>
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onname}>Name</a>
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={onyear}>Year</a>
+                                </li>
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onps}>Ps</a>
+                                </li>
+                                </ul>
+                    </div> 
                     </div>
+
                 </div>
                 <div className="studentDB space-y-2 bg-transparent w-full  h-96 text-black p-10 outline-none">
                     <table className="table-auto border-collapse w-full text-center border shadow-2xl rounded-2xl space-y-2">

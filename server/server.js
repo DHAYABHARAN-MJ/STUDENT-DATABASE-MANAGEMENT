@@ -9,14 +9,7 @@ const db=mysql.createConnection({
     user:'root',
     database:'sdb'
 });
-// db.connect((err)=>{
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log("Successfullly connected");
-//     }
-// });
+
 app.get('/',(req,res)=>{
     return res.json("ABD STARTED TO CONQUEOR THE WORLD");
 })
@@ -33,6 +26,24 @@ app.get('/sbdtable',(req,res)=>{
 });
 app.get('/ps',(req,res)=>{
     const Query="SELECT * FROM sbdtable ORDER BY pslevel DESC";
+    db.query(Query,(err,data)=>{
+        if(err)
+            return res.json(err);
+        else
+        return res.json(data);
+    })
+})
+app.get('/year',(req,res)=>{
+    const Query="SELECT * FROM sbdtable ORDER BY year DESC";
+    db.query(Query,(err,data)=>{
+        if(err)
+            return res.json(err);
+        else
+            return res.json(data);
+    })
+})
+app.get('/name',(req,res)=>{
+    const Query="SELECT * FROM sbdtable ORDER BY name"
     db.query(Query,(err,data)=>{
         if(err)
             return res.json(err);
