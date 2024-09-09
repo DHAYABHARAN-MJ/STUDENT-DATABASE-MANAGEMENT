@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import '../Dashboard/Dashboard.css';
 import searchIcon from '../assets/images/search.png';
+import filtericon from'../assets/images/filterstudents.png';
 import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
@@ -20,6 +21,13 @@ const Dashboard = () => {
         .then(data=>setData(data))
         .catch(err=>console.log(err))
     },[])
+    const onyear=()=>
+        {
+            fetch('http://localhost:8081/ps')
+            .then(res=>res.json())
+            .then(data=>setData(data))
+            .catch(err=>console.log(err))
+        }
 
     return (
         <div className="container-dashboard flex">
@@ -48,10 +56,19 @@ const Dashboard = () => {
                 </div>
                 <div className="search-bar h-5 flex items-center">
                     <input type="search" className="sb w-full shadow rounded border-none focus:outline-none px-2 py-1" placeholder="  Search"/>
-                    <div className="search-icon ml-2 mx-2 cursor-pointer">
+                    <div className="search-icon mx-2 cursor-pointer hover:bg-gray-300 rounded-lg">
                     <img className="w-5 h-5 outline-none text-white" src={searchIcon} alt="" />
                     </div>
-    
+                    <div className="filter-icon">
+                    <img className="cursor-pointer  hover:bg-gray-300 hover:rounded-lg w-5 h-5" onClick={onyear} src={filtericon}/>
+                    {false && <div className="sort bg-white w-8 p-2 mt-24 mx-2 flex-1">
+                        <ul>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                        </ul>
+                    </div>}
+                    </div>
                 </div>
                 <div className="studentDB space-y-2 bg-transparent w-full  h-96 text-black p-10 outline-none">
                     <table className="table-auto border-collapse w-full text-center border shadow-2xl rounded-2xl space-y-2">

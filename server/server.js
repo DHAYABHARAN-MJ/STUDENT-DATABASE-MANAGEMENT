@@ -31,6 +31,15 @@ app.get('/sbdtable',(req,res)=>{
         
     });
 });
+app.get('/ps',(req,res)=>{
+    const Query="SELECT * FROM sbdtable ORDER BY pslevel DESC";
+    db.query(Query,(err,data)=>{
+        if(err)
+            return res.json(err);
+        else
+        return res.json(data);
+    })
+})
 app.post('/addStudent',(req,res)=>{
     const{rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr}=req.body;
     const Query = "INSERT INTO sbdtable (rollno, name, bmail, pslevel, year, cgpa, lab, pr, fr) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
