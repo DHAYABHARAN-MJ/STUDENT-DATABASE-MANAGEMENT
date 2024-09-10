@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect,useState } from "react";
-const StudentAdd=()=>{
+const StudentAdd=({isOpen})=>{
     const [student,setStudent]=useState({
         rollno:'', name:'', bmail:'', pslevel:'',year:'',cgpa:'',lab:'',pr:'',fr:''
     });
@@ -35,7 +35,7 @@ const StudentAdd=()=>{
             
         }
 return(
-    <div className="student space-y-7 p-16 flex-1 max-w-full outline-none">
+    <div className={`student space-y-7 p-16 flex-1 max-w-full outline-none transition-all duration-300 ${isOpen?'ml-64':'ml-0'}`}>
         <input type="text" onChange={Valchange} value={student.name} name="name" placeholder ="  Name" className="outline-none text-black w-full border rounded-full shadow-md h-8" />
         <input type="text" onChange={Valchange} value={student.rollno} name="rollno" placeholder ="  RollNo" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />
         <input type="text" onChange={Valchange} value={student.bmail} name="bmail" placeholder ="  Bmail" className="outline-none text-black bg-white shadow-md rounded-full w-full h-8" />

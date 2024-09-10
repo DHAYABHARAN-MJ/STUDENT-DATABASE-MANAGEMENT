@@ -4,6 +4,7 @@ import Login from '../src/Login/Login';
 import Dashboard from './Dashboard/Dashboard';
 import StudentAdd from './StudentAdd/StudentAdd';
 import SideBar from './SideBar/SideBar';
+import StudentPerformance from './StudentPerformance/StudentPerformance';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import './App.css'; // Assuming you have a CSS file for your App styles
 
@@ -24,7 +25,8 @@ const App = () => {
             <Routes>
               <Route path='/' element={<Login />} />
               <Route path='/Dashboard' element={<Dashboard isOpen={isOpen} />} />
-              <Route path='/StudentAdd' element={<StudentAdd />} />
+              <Route path='/StudentAdd' element={<StudentAdd isOpen={isOpen}/>} />
+              <Route path='/StudentPerformance' element={<StudentPerformance/>} />
             </Routes>
           </div>
         </div>
