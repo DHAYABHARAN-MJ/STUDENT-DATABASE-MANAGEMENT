@@ -19,7 +19,7 @@ const App = () => {
     <GoogleOAuthProvider clientId={CLIENT_ID}>
       <Router>
         <div className="App">
-          <SideBar/>
+          <SideBar isOpen={isOpen} toggle={toggle}/>
           <div className="main-content">
             <Routes>
               <Route path='/' element={<Login />} />

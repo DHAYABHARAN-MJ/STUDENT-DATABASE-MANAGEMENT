@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import menu from '../assets/images/menu.png';
 const SideBar=({isOpen,toggle})=>
   {
     const history=useNavigate();
@@ -28,7 +29,7 @@ return (
       </ul>
   </div>
   <div className="sidebarbtn absolute top-0 left-0 cursor-pointer z-10" onClick={toggle}>
-    ☰
+    <img src={menu} className='w-7 h-7 mx-2 mt-2' alt="" />
      </div>
 </div>
 )

@@ -63,7 +63,7 @@ const Login = () => {
 
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
-      <div className="container">
+      <div className="container h-screen w-screen">
         <div className="wb">
           <center><span id="w">Welcome Back!</span></center>
         </div>

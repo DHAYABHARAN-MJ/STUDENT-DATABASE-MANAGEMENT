@@ -63,16 +63,16 @@ const Dashboard = ({isOpen}) => {
                             <button onClick={toggleopen} class="text-black hover:bg-blue-100 focus:ring-2 focus:outline-none font-extrabold rounded-full px-3 py-2.5 text-center inline-flex items-center" type="button">
                                 <img className="w-7 h-7" src={filtericon} alt="" />
                             </button>
-                    <div id="dropdown" class={` bg-white divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute mt-2 transition-all duration-300 ease-in-out ${isopen?'max-h-96 opacity-100':'max-h-0 opacity-0'}`}>
+                    <div id="dropdown" class={` bg-white divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-center absolute mt-0 transition-all duration-300 ease-in-out w-16 ml-2 mt-2 ${isopen?'max-h-96 opacity-100':'max-h-0 opacity-0'}`}>
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                                 <li>
-                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onname}>Name</a>
+                                    <a class="cursor-pointer block px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onname}>Name</a>
                                 </li>
                                 <li>
-                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={onyear}>Year</a>
+                                    <a class="cursor-pointer block px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={onyear}>Year</a>
                                 </li>
                                 <li>
-                                    <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onps}>Ps</a>
+                                    <a class="cursor-pointer block px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={onps}>Ps</a>
                                 </li>
                                 </ul>
                     </div> 
@@ -80,7 +80,7 @@ const Dashboard = ({isOpen}) => {
 
                 </div>
                 <div className="studentDB bg-transparent w-full h-80 text-gray-500 mt-10 mr-5 outline-none">
-                    <table className="table-auto border-collapse w-full text-center shadow-2xl rounded-3xl overflow-hidden">
+                    <table className="table-auto border-collapse w-full text-left shadow-2xl rounded-3xl overflow-hidden">
                         <thead className="bg-white text-black">
                             <tr>
                                 <th className="border-b border-gray-400 px-4 py-2">Roll No</th>
