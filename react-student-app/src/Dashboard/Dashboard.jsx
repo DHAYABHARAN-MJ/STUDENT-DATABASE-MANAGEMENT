@@ -7,7 +7,7 @@ import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = ({isOpen}) => {
     const [isopen, setIsopen] = useState(false);
-    const [fd,setfd]=useState('');
+    const [fd,setfd]=useState(''); 
     const toggleopen=()=>
         {
             setIsopen(!isopen);
@@ -54,7 +54,7 @@ const Dashboard = ({isOpen}) => {
         
         ) 
         return (
-        <div className="container-dashboard flex max-w-screen-lg">
+        <div className="container-dashboard flex h-screen w-screen">
             <div className={`Content flex-1 p-10 transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-0'} bg-blue-20 relative`}>
                 
                 <div className="search-bar h-5 flex items-center">
@@ -79,32 +79,30 @@ const Dashboard = ({isOpen}) => {
                     </div>
 
                 </div>
-                <div className="studentDB space-y-2 bg-transparent w-full  h-80 text-black p-10 outline-none">
-                    <table className="table-auto border-collapse w-full text-center border shadow-2xl rounded-2xl space-y-2">
-                        <thead className="w-full border rounded-sm bg-blue-100">
+                <div className="studentDB bg-transparent w-full h-80 text-gray-500 mt-10 mr-5 outline-none">
+                    <table className="table-auto border-collapse w-full text-center shadow-2xl rounded-3xl overflow-hidden">
+                        <thead className="bg-white text-black">
                             <tr>
-                                <th className="RollNo border border-gray-950 px-4 py-2 ">Roll No</th>
-                                <th className="Name border border-gray-950 px-4 py-2">Name</th>
-                                <th className="Bmail border border-gray-950 px-4 py-2">Bmail</th>
-                                <th className="PS Level border border-gray-950 px-4 py-2">PS level</th>
-                                <th className="Year border border-gray-950 px-4 py-2">Year</th>
-
+                                <th className="border-b border-gray-400 px-4 py-2">Roll No</th>
+                                <th className="border-b border-gray-400 px-4 py-2">Name</th>
+                                <th className="border-b border-gray-400 px-4 py-2">Bmail</th>
+                                <th className="border-b border-gray-400 px-4 py-2">PS level</th>
+                                <th className="border-b border-gray-400 px-4 py-2">Year</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {filterData.map((d,i)=>(
+                        <tbody className="bg-white">
+                            {filterData.map((d, i) => (
                                 <tr key={i}>
-                                    <td className="border border-gray-950 px-4 py-2">{d.rollno}</td>
-                                    <td className="border border-gray-950 px-4 py-2">{d.name}</td>
-                                    <td className="border border-gray-950 px-4 py-2">{d.bmail}</td>
-                                    <td className="border border-gray-950 px-4 py-2">{d.pslevel}</td>
-                                    <td className="border border-gray-950 px-4 py-2">{d.year}</td>
+                                    <td className="border-t border-gray-200 px-4 py-2">{d.rollno}</td>
+                                    <td className="border-t border-gray-200 px-4 py-2">{d.name}</td>
+                                    <td className="border-t border-gray-200 px-4 py-2">{d.bmail}</td>
+                                    <td className="border-t border-gray-200 px-4 py-2">{d.pslevel}</td>
+                                    <td className="border-t border-gray-200 px-4 py-2">{d.year}</td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-
-             </div>
+                </div>
             </div>
         </div>
     );
