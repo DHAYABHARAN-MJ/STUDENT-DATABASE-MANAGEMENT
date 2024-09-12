@@ -23,16 +23,13 @@ return (
   >
       <ul className="space-y-5 space-x-1 mt-4 mr-5">
           <li>
-              <a onClick={onHome} className="home hover:bg-slate-100 p-2 rounded block shadow rounded">Home</a>
+              <a onClick={onHome} className="home hover:bg-slate-100 p-2 rounded block shadow rounded">Dashboard</a>
           </li>
           <li>
-              <a onClick={onstudent} className="about hover:bg-slate-100 p-2 rounded block shadow rounded">Student</a>
+              <a onClick={onstudent} className="about hover:bg-slate-100 p-2 rounded block shadow rounded">Student Addition</a>
           </li>
           <li>
-              <a className="hover:bg-slate-100 p-2 rounded block shadow rounded">Ps</a>
-          </li>
-          <li>
-              <a  onClick={onSp} className="hover:bg-slate-100 p-2 rounded block shadow rounded">Ptac</a>
+              <a  onClick={onSp} className="hover:bg-slate-100 p-2 rounded block shadow rounded">Student Performance Tracker</a>
           </li>
       </ul>
   </div>
