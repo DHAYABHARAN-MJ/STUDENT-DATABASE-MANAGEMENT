@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.13.0",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
+    "@mui/joy": "^5.0.0-beta.48",
     "@mui/x-charts": "^7.16.0",
     "@react-oauth/google": "^0.12.1",
     "cors": "^2.8.5",
@@ -21,6 +22,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^3.1.4",
     "react": "^18.3.1",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
