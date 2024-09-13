@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import '../Dashboard/Dashboard.css';
 import searchIcon from '../assets/images/search.png';
 import filtericon from'../assets/images/filterstudents.png';
-import { Navigate,useNavigate } from "react-router-dom";
 
 const Dashboard = ({isOpen}) => {
     const [isopen, setIsopen] = useState(false);

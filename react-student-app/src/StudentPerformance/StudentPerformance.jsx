@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { PieChart } from '@mui/x-charts/PieChart';
 import { BarChart } from '@mui/x-charts/BarChart';
 import CircularProgress from '@mui/joy/CircularProgress';
 import student from '../assets/images/student.png';
+import { useEffect } from "react";
 
 const StudentPerformance = () => {
+  const [data,setData]=useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:8081/cgpa9')
+    .then(res=>res.json())
+    .then(data=>setData(data))
+    .catch(err=>console.log(err))
+  },[])
+
+  const cgpaAbove9=data.length>0?data[0]["COUNT(cgpa)"]:0;
+
   return (
     <div className="StudentPerformance w-screen h-screen">
       <div className="studentyear w-full h-40 flex space-x-3">
@@ -77,7 +88,7 @@ const StudentPerformance = () => {
                 series={[
                   {
                     data: [
-                      { id: 0, value: 10, label: 'Above 9.0 CGPA' },
+                      { id: 0, value: cgpaAbove9, label: 'Above 9.0 CGPA' },
                       { id: 1, value: 15, label: '8.5 TO 9.0 CGPA' },
                       { id: 2, value: 20, label: '6.5 TO 8.49 CGPA' },
                     ],
