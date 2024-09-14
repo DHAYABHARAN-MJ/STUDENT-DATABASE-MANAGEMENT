@@ -14,14 +14,19 @@ const StudentPerformance = () => {
     .then(res=>res.json())
     .then(data=>setData(data))
     .catch(err=>console.log(err))
+
+    //CGPA between 8.5 to 9
+
+    fetch("http://localhost:8081/cgpa8.5")
+    .then(res=>res.json())
+    .then(data=>setCgpa85(data))
+    .catch(err=>console.log(err))
+
   },[])
-  fetch("http://localhost:8081/cgpa8.5")
-  .then(res=>res.json())
-  .then(data=>setCgpa85(data))
-  .catch(err=>console.log(err))
+
 
   const cgpaAbove9=data.length>0?data[0]["COUNT(cgpa)"]:0;
-
+  const cgpa85to9=cgpa85.length>0?cgpa85[0]["COUNT(cgpa)"]:0;
   return (
     <div className="StudentPerformance w-screen h-screen">
       <div className="studentyear w-full h-40 flex space-x-3">
@@ -95,7 +100,7 @@ const StudentPerformance = () => {
                   {
                     data: [
                       { id: 0, value: cgpaAbove9, label: 'Above 9.0 CGPA' },
-                      { id: 1, value: 15, label: '8.5 TO 9.0 CGPA' },
+                      { id: 1, value: cgpa85to9, label: '8.5 TO 9.0 CGPA' },
                       { id: 2, value: 20, label: '6.5 TO 8.49 CGPA' },
                     ],
                   },
