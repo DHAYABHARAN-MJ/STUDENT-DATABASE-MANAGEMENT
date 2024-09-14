@@ -69,6 +69,15 @@ app.get('/cgpa8.5', (req, res) => {
     )
 })
 
+app.get("/cgpa65to849", (req, res) => {
+    const Query = "SELECT COUNT(cgpa) FROM sbdtable WHERE 6.5<cgpa AND cgpa<8.5";
+    db.query(Query, (err, data) => {
+        if (err)
+            return res.json(err);
+        else
+            return res.json(data);
+    })
+})
 
 app.post('/addStudent', (req, res) => {
     const { rollno, name, bmail, pslevel, year, cgpa, lab, pr, fr } = req.body;

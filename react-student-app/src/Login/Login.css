@@ -1,25 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ecf1fa;
     color: rgb(0, 0, 0);
     box-sizing: border-box;
-   
+
 }
 
-.wb
-{
+.wb {
     margin-top: 180px;
     font-size: 50px;
     font-weight: lighter;
     font-stretch: extra-expanded;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .login-container {
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     backdrop-filter: blur(5px);
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,13 +28,14 @@ body {
     height: 410px;
     color: rgb(255, 255, 255);
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 
-    margin:auto;
+    margin: auto;
     margin-top: 40px;
     padding-top: 12px;
     padding-bottom: 10px;
 }
+
 .google-signin-container {
     padding: auto;
     margin: 10px;
@@ -43,34 +44,34 @@ body {
     align-items: center;
     text-align: center;
 }
-.google-signin-container .bitsathyimg{
+
+.google-signin-container .bitsathyimg {
     margin: 15px;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
-.gb{
+.gb {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     color: rgb(162, 177, 27);
-    background-color:#0ea4e9;
+    background-color: #0ea4e9;
     height: 4vh;
     align-items: center;
     justify-content: space-around;
     width: 350px;
     border-radius: 8px;
     cursor: pointer;
-    margin:auto;
+    margin: auto;
 }
-.signin
-{
+
+.signin {
     font-size: large;
     font-weight: 500;
     padding-right: 0%;
     color: #ffffff;
 }
-.gb:hover{
+
+.gb:hover {
     background-color: #0ea4e98e;
 }
-
-

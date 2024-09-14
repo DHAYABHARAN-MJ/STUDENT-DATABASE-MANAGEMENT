@@ -6,27 +6,37 @@ import student from '../assets/images/student.png';
 import { useEffect } from "react";
 
 const StudentPerformance = () => {
-  const [data,setData]=useState([]);
-  const [cgpa85,setCgpa85]=useState([]);
+  const [data, setData] = useState([]);
+  const [cgpa85, setCgpa85] = useState([]);
+  const [cgpa849, setCgpa849] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('http://localhost:8081/cgpa9')
-    .then(res=>res.json())
-    .then(data=>setData(data))
-    .catch(err=>console.log(err))
+      .then(res => res.json())
+      .then(data => setData(data))
+      .catch(err => console.log(err))
 
     //CGPA between 8.5 to 9
 
     fetch("http://localhost:8081/cgpa8.5")
-    .then(res=>res.json())
-    .then(data=>setCgpa85(data))
-    .catch(err=>console.log(err))
+      .then(res => res.json())
+      .then(data => setCgpa85(data))
+      .catch(err => console.log(err))
 
-  },[])
+    //CGPA between 6.5 to 8.49
+
+    fetch("http://localhost:8081/cgpa65to849")
+      .then(res => res.json())
+      .then(data => setCgpa849(data))
+      .catch(err => console.log(err))
 
 
-  const cgpaAbove9=data.length>0?data[0]["COUNT(cgpa)"]:0;
-  const cgpa85to9=cgpa85.length>0?cgpa85[0]["COUNT(cgpa)"]:0;
+  }, [])
+
+
+  const cgpaAbove9 = data.length > 0 ? data[0]["COUNT(cgpa)"] : 0;
+  const cgpa85to9 = cgpa85.length > 0 ? cgpa85[0]["COUNT(cgpa)"] : 0;
+  const cgpa65to849 = cgpa849.length > 0 ? cgpa849[0]["COUNT(cgpa)"] : 0;
   return (
     <div className="StudentPerformance w-screen h-screen">
       <div className="studentyear w-full h-40 flex space-x-3">
@@ -101,7 +111,7 @@ const StudentPerformance = () => {
                     data: [
                       { id: 0, value: cgpaAbove9, label: 'Above 9.0 CGPA' },
                       { id: 1, value: cgpa85to9, label: '8.5 TO 9.0 CGPA' },
-                      { id: 2, value: 20, label: '6.5 TO 8.49 CGPA' },
+                      { id: 2, value: cgpa65to849, label: '6.5 TO 8.49 CGPA' },
                     ],
                   },
                 ]}
@@ -133,35 +143,35 @@ const StudentPerformance = () => {
         </div>
 
         <div className="p2 bg-white w-full h-4/5 mt-7 border rounded-2xl flex items-center">
-        <div className="piechart flex w-full mt-5">
-              <PieChart
-                series={[
-                  {
-                    data: [
-                      { id: 0, value: 10, label: 'FR BELOW 10' },
-                      { id: 1, value: 10, label: 'BETWEEN 50 TO 11' },
-                      { id: 2, value: 15, label: 'BETWEEN 100 TO 50' },
-                    ],
-                  },
-                ]}
-                width={550}
-                height={200}
-              />
-            </div>
-        
+          <div className="piechart flex w-full mt-5">
+            <PieChart
+              series={[
+                {
+                  data: [
+                    { id: 0, value: 10, label: 'FR BELOW 10' },
+                    { id: 1, value: 10, label: 'BETWEEN 50 TO 11' },
+                    { id: 2, value: 15, label: 'BETWEEN 100 TO 50' },
+                  ],
+                },
+              ]}
+              width={550}
+              height={200}
+            />
+          </div>
+
         </div>
       </div>
 
       <div className="barchart bg-white w-full h-80 border rounded-2xl mt-5 flex justify-center">
-      <div className="subjects text-black text-wrap"></div>
-      <BarChart
-      xAxis={[{ scaleType: 'band', data: ['PRINCIPLES OF COMMUNICATION', 'COMPUTER NETWORKS', 'INFORMATION CODING TECHNIQUES','INTERNET OF THINGS','SOFTWARE DEFINED NETWORKS','MINI PROJECT'] }]}
-      series={[{ data: [100, 100, 100,100,100,100] }]}
-      width={1500}
-      height={300}
-    />
-      </div> 
-       </div>
+        <div className="subjects text-black text-wrap"></div>
+        <BarChart
+          xAxis={[{ scaleType: 'band', data: ['PRINCIPLES OF COMMUNICATION', 'COMPUTER NETWORKS', 'INFORMATION CODING TECHNIQUES', 'INTERNET OF THINGS', 'SOFTWARE DEFINED NETWORKS', 'MINI PROJECT'] }]}
+          series={[{ data: [100, 100, 100, 100, 100, 100] }]}
+          width={1500}
+          height={300}
+        />
+      </div>
+    </div>
   );
 }
 
