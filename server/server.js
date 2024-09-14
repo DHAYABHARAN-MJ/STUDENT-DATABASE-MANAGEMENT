@@ -60,6 +60,17 @@ app.get('/cgpa9',(req,res)=>{
             else return res.json(data);
         })
 })
+app.get('/cgpa8.5',(req,res)=>
+    {
+        const Query="SELECT COUNT(cgpa) FROM sbdtable WHERE 8<cgpa AND cgpa<9"
+        db.query(Query,(err,data)=>{
+            if(err)
+                return res.json(err);
+            else
+            return res.json(data);
+        }
+    )
+    })
 app.post('/addStudent',(req,res)=>{
     const{rollno, name, bmail, pslevel,year,cgpa,lab,pr,fr}=req.body;
     const Query = "INSERT INTO sbdtable (rollno, name, bmail, pslevel, year, cgpa, lab, pr, fr) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";

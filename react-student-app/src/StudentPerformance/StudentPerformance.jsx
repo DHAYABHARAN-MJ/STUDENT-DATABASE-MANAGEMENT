@@ -7,12 +7,18 @@ import { useEffect } from "react";
 
 const StudentPerformance = () => {
   const [data,setData]=useState([]);
+  const [cgpa85,setCgpa85]=useState([]);
+
   useEffect(()=>{
     fetch('http://localhost:8081/cgpa9')
     .then(res=>res.json())
     .then(data=>setData(data))
     .catch(err=>console.log(err))
   },[])
+  fetch("http://localhost:8081/cgpa8.5")
+  .then(res=>res.json())
+  .then(data=>setCgpa85(data))
+  .catch(err=>console.log(err))
 
   const cgpaAbove9=data.length>0?data[0]["COUNT(cgpa)"]:0;
 
