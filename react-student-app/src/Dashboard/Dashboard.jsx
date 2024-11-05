@@ -51,8 +51,8 @@ const Dashboard = ({ isOpen }) => {
         <div className="container-dashboard flex h-screen w-screen">
             <div className={`Content flex-1 p-10 transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-0'} bg-blue-20 relative`}>
 
-                <div className="search-bar h-5 flex items-center">
-                    <input type="search" value={fd} onChange={searchQuery} className="sb w-full shadow rounded border-none focus:outline-none px-2 py-1" placeholder="  Search" />
+                <div className="search-bar flex items-center">
+                    <input type="search" value={fd} onChange={searchQuery} className="sb w-full shadow rounded border-none focus:outline-none p-2" placeholder="  Search" />
                     <div className="filter-icon">
                         <button onClick={toggleopen} class="text-black hover:bg-blue-100 focus:ring-2 focus:outline-none font-extrabold rounded-full px-3 py-2.5 text-center inline-flex items-center" type="button">
                             <img className="w-7 h-7" src={filtericon} alt="" />

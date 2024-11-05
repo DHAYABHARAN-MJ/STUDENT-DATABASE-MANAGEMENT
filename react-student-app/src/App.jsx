@@ -6,7 +6,7 @@ import StudentAdd from './StudentAdd/StudentAdd';
 import SideBar from './SideBar/SideBar';
 import StudentPerformance from './StudentPerformance/StudentPerformance';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import './App.css'; // Assuming you have a CSS file for your App styles
+import './App.css'; 
 
 const App = () => {
   const CLIENT_ID = '238970835426-f88bu0tpphgd6cc8rkfrq70sdea6qcb7.apps.googleusercontent.com';

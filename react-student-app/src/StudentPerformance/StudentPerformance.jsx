@@ -49,9 +49,9 @@ const StudentPerformance = () => {
             <option value="">IV</option>
           </select>
         </div>
-        <div className="students w-8/12 h-32 mt-5 border rounded-2xl flex">
-          <div className="studentimg bg-white w-4/12 border rounded-lg mr-2 flex">
-            <div className="text-black text-xl ml-4 mt-2 text-center px-2 w-full">
+        <div className="students w-8/12  mt-5 border rounded-2xl flex">
+          <div className="studentimg bg-white w-4/12 border rounded-lg mr-2 flex p-1">
+            <div className="text-black  ml-4 mt-2 text-center px-2 w-full text-xl">
               PLACED
               <div>
                 <CircularProgress color="warning" sx={{
